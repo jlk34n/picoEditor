@@ -1,0 +1,128 @@
+/* 
+Author: jknight@ebsco.com 
+File:   picoEditor.css
+Rev:    1.0a;
+Desc:   styles for pico-editor aka picobox   (see http://widgets.ebscohost.com/dev/simplekey/picoEditor/picoEditor.js)
+*/
+
+section#guided-find-fields {
+    position: relative;
+}
+
+#picoModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background: rgb(160,160,160);
+    background: rgba(0,0,0,0.4);
+}
+
+#picoBox {
+    display: none;
+    position: absolute;
+    z-index: 99999;
+    height: 360px;
+    width: 312px;
+    box-shadow: 2px 2px 8px #222;
+    background: rgba(255,255,255,0.92);
+    border-radius: 8px;
+    top: -2em;
+    left: -1em;
+}
+
+#close-picobox span {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    font-size: 18px;
+    padding: 2px;
+    cursor: pointer;
+    background: transparent url(http://smallcontent.ebsco-content.com/interfacefiles/16.1.0.155.1/ehost/sprites/icon-sprites.png) -400px -155px no-repeat;
+    width: 5px;
+    height: 5px;
+    cursor: pointer;
+    padding: 6px 6px;
+}
+
+#picoBox #picoForm h2 {
+    font-size: 24px;
+    color: #666;
+    margin: 8px;
+}
+
+#picoBox .picoSearch {
+    background: #fff;
+    padding: 24px;
+    border-radius: 4px;
+}
+
+fieldset {
+    border: none;
+}
+
+.picoField {
+    margin: 2px 0;
+    border: 1px dotted #ccc;
+    border-radius: 4px;
+    padding: 2px;
+}
+
+.picoField label {
+    display: inline-block;
+    width: 1em;
+    text-align: center;
+    color: #666;
+}
+
+.picoField [type=text] {
+    border: none;
+    outline: none;
+    padding: 0 0 0 4px;
+    width: 92%;
+}
+
+.picoField [type=text]:focus {
+    /* override master-bundle handling of input fields on focus*/
+    box-shadow: none; 
+}
+
+.picoSearch [type=button], .picoSearch [type=submit], .picoSearch [type=reset] {
+    /*border: none;*/
+    background: lightblue;
+    padding: 4px 12px;
+    border-radius: 4px;
+    margin: 8px 12px 0 0;
+    color: #666;
+    cursor: pointer;
+}
+
+.picoSearch [type=button]#picoHelp {
+    background: #f0d5d5;
+    color: #222;
+    font-style: italic;
+    float: right;
+}
+
+#picoMessage {
+    padding: 8px;
+    color: #666;
+    font-size: 11px;
+    box-shadow: inset 1px 1px 4px #666;
+    margin: 6px;
+    /*box-sizing: border-box;*/
+    border-radius: 4px;
+    height: 103px;
+}
+
+#picoErrors {
+    font-style: italic;
+    font-size: 11px;
+    color: #F44;
+}
+
+/* end of picobox: ; styles */

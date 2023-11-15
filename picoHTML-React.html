@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pico</title>
+</head>
+
+<body>
+    <div id="picoBox"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.min.js"></script>
+    <script>
+    var PicoFormContainer = React.createClass({
+        render: function() {
+
+            // console.log(this.props)
+            var picoElements = this.props.inputs.map(function(input) {
+                return React.createElement(
+                    PicoSearchInput, {
+                        labelFor: input.id,
+                        labelText: input.label,
+                        inputId: input.id,
+                        inputPlaceholder: input.placeholder
+                    },
+                    null
+                )
+            });
+
+            console.log(picoElements)
+
+            return (
+                React.createElement('<div>', null, picoElements),
+                React.createElement('div', null,
+                    React.createElement('input', {
+                        type: 'submit'
+                    }),
+                    React.createElement('input', {
+                        type: 'reset'
+                    }))
+            );
+        }
+    });
+
+    var PicoSearchInput = React.createClass({
+        render: function() {
+            return (
+                React.createElement('div', {
+                        className: 'picoField'
+                    },
+                    React.createElement('label', {
+                        htmlFor: this.props.labelFor
+                    }, this.props.labelText),
+                    React.createElement('input', {
+                        id: this.props.inputId,
+                        placeholder: this.props.inputPlaceholder,
+                        type: 'text'
+                    })
+                )
+            )
+        }
+    });
+
+
+    var INPUTS = [{
+        id: 'picoPopulation',
+        label: 'P',
+        placeholder: 'Population',
+        name: 'population'
+    }, {
+        id: 'picoIntervention',
+        label: 'I',
+        placeholder: 'Intervention',
+        name: 'intervention'
+    }, {
+        id: 'picoCondition',
+        label: 'C',
+        placeholder: 'Condition',
+        name: 'condition'
+    }, {
+        id: 'picoOutcome',
+        label: 'O',
+        placeholder: 'Outcome',
+        name: 'outcome'
+    }];
+
+    ReactDOM.render(
+        React.createElement(PicoFormContainer, {
+            inputs: INPUTS
+        }),
+        document.getElementById('picoBox')
+    )
+    </script>
+</body>
+
+</html>

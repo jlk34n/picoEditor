@@ -1,0 +1,64 @@
+<style>
+    .picoField {
+  display: flex;
+  align-items: center;
+  background: #f5f5f5;
+  margin-bottom: .25rem;
+}
+.picoField label {
+  font-family: monospace;
+  font-weight: bold;
+  padding: 0 .5rem;
+}
+.picoField input {
+  margin: 0;
+}
+.picoError {
+  float: left;
+}
+.picoError:empty {
+  display: none;
+  margin: 0;
+  padding: 0;
+}
+.picoError em {
+  padding-top: .5rem;
+  white-space: nowrap;
+}
+.picoSearch .button-group {
+  margin: .5rem 0 0;
+}
+.picoMessage {
+  font-size: .9rem;
+}
+</style>
+<h4>PICO Search Widget</h4>
+<div class="picoSearch">
+    <div id="picoFormCenter">
+        <form action="#" class="row" id="picoForm"><input name="edsURL" type="hidden" value="https://search.ebscohost.com/login.aspx?direct=true&amp;scope=site&amp;type=0&amp;site=eds-live&amp;authtype=ip,uid&amp;custid=s8501817&amp;profile=eds&amp;groupid=main">
+            <fieldset class="columns small-12 medium-12 large-8" react="PicoFieldSet">
+                <div class="picoField"><label for="picoPopulation">P</label> <input data-topic="population" id="picoPopulation" name="picoPopulation" placeholder="Problem/Population" type="text"></div>
+                <div class="picoField"><label for="picoIntervention">I</label> <input data-topic="intervention" id="picoIntervention" name="picoIntervention" placeholder="Intervention" type="text"></div>
+                <div class="picoField"><label for="picoComparison">C</label> <input data-topic="comparison" id="picoComparison" name="picoComparison" placeholder="Comparison" type="text"></div>
+                <div class="picoField"><label for="picoOutcome">O</label> <input data-topic="outcome" id="picoOutcome" name="picoOutcome" placeholder="Outcome" type="text"></div>
+            </fieldset>
+            <div class="columns small-12 medium-12 large-4" id="picoMessageCenter">
+                <div class="picoMessage" id="picoMessage">&nbsp;</div>
+            </div>
+            <fieldset class="columns small-12">
+                <div class="small button-group"><input class="button secondary" id="picoHelp" type="button" value="Help"> <input class="button secondary" id="picoReset" type="reset" value="Reset"> <input class="button" id="picoSubmit" type="submit" value="Submit"></div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<div class="picoError" id="picoErrors">&nbsp;</div>
+<script src="https://widgets.ebscohost.com/prod/simplekey/picoWidget/js/picoWidget-v1.0a.js"></script>
+<script>
+jQuery(document).ready(function($) {
+    $('#picoErrors').each(function() {
+        var $this = $(this);
+        if ($this.html().replace(/\s|&nbsp;/g, '').length == 0)
+            $this.empty();
+    });
+});
+</script>

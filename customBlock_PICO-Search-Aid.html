@@ -1,0 +1,75 @@
+<!-- <div data-db="CINAHL Ultimate, MEDLINE Ultimate" id="picoSearch"> -->
+<div data-db="CINAHL Ultimate, MEDLINE Ultimate" id="picoSearch">
+  <fieldset react="PicoFieldSet">
+    <div class="picoField">
+      <label for="picoPopulation"
+        ><span class="picoCapitalLetter" id="pico_p">P</span
+        >roblem/Population</label
+      >
+      <input
+        autocomplete="off"
+        class="picosearchoption"
+        id="picoPopulation"
+        name="picoPopulation"
+        placeholder="Problem/Population"
+        required=""
+        topic="population"
+        type="text"
+      />
+    </div>
+
+    <div class="picoField">
+      <label for="picoIntervention"
+        ><span class="picoCapitalLetter" id="pico_i">I</span>ntervention</label
+      >
+      <input
+        autocomplete="off"
+        class="picosearchoption"
+        id="picoIntervention"
+        name="picoIntervention"
+        placeholder="Intervention"
+        required=""
+        topic="intervention"
+        type="text"
+      />
+    </div>
+
+    <div class="picoField">
+      <label for="picoComparison"
+        ><span class="picoCapitalLetter" id="pico_c">C</span>omparison</label
+      >
+      <input
+        autocomplete="off"
+        class="picosearchoption"
+        id="picoComparison"
+        name="picoComparison"
+        placeholder="Comparison"
+        topic="comparison"
+        type="text"
+      />
+    </div>
+
+    <div class="picoField">
+      <label for="picoOutcome"
+        ><span class="picoCapitalLetter" id="pico_o">O</span>utcome</label
+      >
+      <input
+        autocomplete="off"
+        class="picosearchoption"
+        id="picoOutcome"
+        name="picoOutcome"
+        placeholder="Outcome"
+        topic="outcome"
+        type="text"
+      />
+    </div>
+  </fieldset>
+
+  <div id="picoHelp"></div>
+
+  <fieldset class="button-group">
+    <input class="button" id="picoSubmit" type="button" value="Submit" />
+    <input class="button" id="picoReset" type="button" value="Reset" />
+    <input class="button" id="picoHelpButton" type="button" value="Help" />
+  </fieldset>
+</div>

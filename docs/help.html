@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PICO Help - v0.1</title>
+	<link rel="stylesheet" href="../css/helpDocs.css">
+</head>
+<body>
+	<div class="helpContainer">
+		<h4>Discovery Health PICO Search Widget</h4>
+		<p>The EBSCO Health PICO widget is intended to help users formulate searches using the PICO framework. The widget assembles the terms entered into each of the fields to form an EDS search expression. The search expression is transfered to the EDS search dialog, and the Search (submit) button is activated automatically.</p>
+		<p>There is evidence [1] that using the PICO framework can increase the precision of searches in a clinical setting. A number of medical libraries and database providers have made PICO tools available to their end users, as well as research guides and instructions on the use of the PICO framework. Some useful examples:</p>
+		<ul>
+			<li><a href="http://guides.lib.uw.edu/hsl/ebp/pico">University of Washington Health Sciences</a></li>
+			<li><a href="http://guides.lib.unc.edu/pico">UNC Health Sciences</a></li>
+			<li><a href="http://guides.mclibrary.duke.edu/ebm/pico">Duke University Medical Center</a></li>
+			<li><a href="http://med.cornell.libguides.com/content.php?pid=295507&sid=2471676">Weill Cornell Medical</a></li>
+			<li><a href="http://fgcu.libguides.com/EBP/pico">FGCU Library</a></li>
+			<li><a href="https://mcw.libguides.com/EBM/PICO">Medical College of Wisconsin</a></li>
+			<li><a href="http://libguides.csuchico.edu/c.php?g=414282&p=2821925">CSU Chico</a></li>
+		</ul>
+		<p>EBSCO Health staff have also drafted this instructional guide: <a href="//imageserver.ebscohost.com/branding/PICO/PICO_Search_Strategy_CINAHL_Complete_White_Papers_1217_FINAL.pdf">7 STEPS TO THE PERFECT PICO SEARCH</a></p>
+		<h4>Using the EDS PICO widget</h4>
+		<p>The EDS PICO widget is a simple tool that provides users a form for parsing their search terms according to the PICO framework, and mapping those terms to an EDS search expression.</p>
+		<ul>
+			<li>Required Fields: Population/Problem, Intervention</li>
+			<li>Optional Fields: Comparison, Outcomes</li>
+			<br>
+			<li>Submit: users must click on the submit button to execute the PICO search in EDS</li>
+			<li>Reset: clears the form</li>
+			<li>Help: displays this page</li>
+		</ul>
+		<h4>Recommendations</h4>
+		<ol>
+			<li>Start your search using broad or simplified terms to describe a condition or intervention; in many cases, these will be automatically mapped to the more specific descriptors in each database.</li>
+			<li>PICO searches should be focused on matters of therapy, diagnosis, or prognosis. [2] Use the EDS Basic or Advanced search for basic research questions.</li>
+			<li>Do not include Boolean operators in your PICO search (and, or).</li>
+			<li>Once you've submitted your initial search, use the EDS facet and limiter tools to further refine or expand your search results. Remember, PICO is a tool to get you started, but there are many other tools within EDS that help you refine your results.</li>
+		</ol>
+		<div class="citations">
+			<ul>
+				<li>[1] <a href="https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-7-16">Utilization of the PICO framework to improve searching PubMed for clinical questions; BMC Medical Informatics and Decision Making. 2007 7:16 | DOI: 10.1186/1472-6947-7-16</a></li>
+				<li>[2] <a href="https://mclibrary.duke.edu/sites/mclibrary.duke.edu/files/public/guides/richardson.pdf">Richardson, et al: The well-built clinical question: a key to evidence-based decisions. ACP Journal Club, Nov/Dec 1995, A12-13</a></li>
+			</ul>
+		</div>
+		<div class="feedback">
+			<h4>Feedback</h4>
+			<p>We would welcome your feedback on the performance of this widget. Please contact the widget's author directly at <a href="mailto:jknight@ebsco.com">jknight@ebsco.com</a> with your comments/advice.</p>
+		</div>
+		<footer>
+			<p>PICO Help - v0.1 | &copy; EBSCO Information Services, <span id="ccyear"></span></p>
+		</footer>
+	</div>
+</body>
+<script>
+	var ccyear = document.getElementById('ccyear');
+	ccyear.innerText = new Date().getFullYear();
+</script>
+</html>

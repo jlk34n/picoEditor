@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <meta charset="UTF-8">
+    <title>PICO HTML</title>
+    <style>
+    body {
+        margin: 24px;
+        width: 248px;
+        box-shadow: 1px 1px 8px #222;
+    }
+    
+    fieldset {
+        border: none;
+    }
+    
+    .picoField {
+        margin: 2px 0;
+        border: 1px dotted #ccc;
+        border-radius: 4px;
+        padding: 2px;
+    }
+    
+    .picoField label {
+        display: inline-block;
+        width: 1em;
+        text-align: center;
+        color: #666;
+    }
+    
+    .picoField [type=text] {
+        border: none;
+        outline: none;
+    }
+    
+    [type=submit],
+    [type=reset] {
+        border: none;
+        background: lightblue;
+        padding: 4px 12px;
+        border-radius: 4px;
+    }
+    
+    .picoField span.help {
+        display: inline-block;
+        background: lightblue;
+        color: #666;
+        border-radius: 50%;
+        width: 18px;
+        text-align: center;
+        float: right;
+    }
+    
+    #picoBox .banner {
+        padding: 8px;
+
+    }
+    
+    #picoBox .messageCenter {
+        height: 32px;
+        padding: 8px 12px 0;
+        box-sizing: border-box;
+    }
+    
+    #picoBox #errMessageBox {
+        font-size: 11px;
+    }
+    
+    #picoBox #errMessageBox ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    #picoBox #errMessageBox .error {
+        display: block;
+        padding: 2px;
+        color: #e88;
+    }
+    </style>
+</head>
+
+<body id="picoBox">
+    <div class="banner">
+        EIS PICO Search Box
+    </div>
+    <div class="messageCenter">
+        <div id="errMessageBox">
+            <ul></ul>
+        </div>
+    </div>
+    <form action="" id="picoForm" react="PicoForm">
+        <fieldset react="PicoFieldSet">
+            <div class="picoField" react="PicoField">
+                <label for="picoPopulation" react="PicoInputLabel">P</label>
+                <input id="picoPopulation" placeholder="Population" name="picoPopulation" react="PicoInputText" type="text">
+                <span class="help" react="PicoInputHelp">?</span>
+            </div>
+            <div class="picoField" react="PicoField">
+                <label for="picoIntervention" react="PicoInputLabel">I</label>
+                <input id="picoIntervention" placeholder="Intervention" name="picoIntervention" react="PicoInputText" type="text">
+                <span class="help" react="PicoInputHelp">?</span>
+            </div>
+            <div class="picoField" react="PicoField">
+                <label for="picoCondition" react="PicoInputLabel">C</label>
+                <input id="picoCondition" placeholder="Condition" name="picoCondition" react="PicoInputText" type="text">
+                <span class="help" react="PicoInputHelp">?</span>
+            </div>
+            <div class="picoField" react="PicoField">
+                <label for="picoOutcome" react="PicoInputLabel">O</label>
+                <input id="picoOutcome" placeholder="Outcome" name="picoOutcome" react="PicoInputText" type="text">
+                <span class="help" react="PicoInputHelp">?</span>
+            </div>
+        </fieldset>
+        <fieldset react="PicoFieldSet">
+            <input type="submit" react="PicoSubmitButton">
+            <input type="reset" react="PicoResetButton">
+        </fieldset>
+    </form>
+    <script>
+    $("#picoForm").validate({
+        errorContainer: "#errMessageBox",
+        errorLabelContainer: "#errMessageBox ul",
+        wrapper: "li",
+        rules: {
+            "picoPopulation": {
+                required: true,
+                minlength: 1
+            },
+            "picoIntervention": {
+                required: true,
+                minlength: 1
+            }
+        },
+        messages: {
+            "picoPopulation": "Problem or Population is a required field",
+            "picoIntervention": "Intervention is a required field"
+        }
+    });
+    </script>
+</body>
+
+</html>
+<!-- 
+Component Breakdown
+PicoFormContainer
+    PicoForm
+        PicoFieldSet
+            PicoField
+                PicoInputLabel
+                PicoInputText
+                PicoInputHelp
+            PicoSubmitButton
+            PicoResetButton
+ -->

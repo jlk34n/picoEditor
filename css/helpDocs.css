@@ -1,0 +1,19 @@
+.helpContainer {
+	font-family: arial, helvetica, sans-serif;
+	font-size: 14px;
+}
+
+.helpContainer footer {
+	margin-top: 2.4em;
+	border-top: 1px dotted #666;
+}
+
+.helpContainer .citations {
+	margin: 2em 0;
+	border-top: 4px solid #eee;
+}
+
+.helpContainer .citations li {
+	list-style-type: none;
+	font-size: 11px;
+}
